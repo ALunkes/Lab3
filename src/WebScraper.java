@@ -33,6 +33,7 @@ public class WebScraper {
             }
         }
         System.out.println("Word Count: " + wordCount);
+        //it's too large
 
     }
 }
