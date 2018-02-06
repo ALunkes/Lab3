@@ -24,8 +24,9 @@ public class WebScraper {
         for (int count = 0; count < text.length(); count++) {
             if (text.charAt(count) == ' ') {
                 wordCount++;
+                System.out.println("a" + text.charAt(count) + "a");
                 int extra = 1;
-                while (text.charAt(count + extra) == ' ') {
+                while (text.charAt(count + extra) == ' ' || text.charAt(count + extra) == '\n' || text.charAt(count + extra) == '\t') {
                     count++;
                     extra++;
                 }
