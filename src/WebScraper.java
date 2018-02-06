@@ -18,8 +18,20 @@ public class WebScraper {
         String contents = urlScanner.useDelimiter("\\A").next();
         urlScanner.close();
         return contents;
-    }
-    public static void main(String[] unused) {
-        System.out.println(urlToString("http://erdani.com/tdpl/hamlet.txt"));
+    }public static void main(String[] unused) {
+        String text = (urlToString("http://erdani.com/tdpl/hamlet.txt"));
+        int wordCount = 0;
+        for (int count = 0; count < text.length(); count++) {
+            if (text.charAt(count) == ' ') {
+                wordCount++;
+                int extra = 1;
+                while (text.charAt(count + extra) == ' ') {
+                    count++;
+                    extra++;
+                }
+            }
+        }
+        System.out.println("Word Count: " + wordCount);
+
     }
 }
